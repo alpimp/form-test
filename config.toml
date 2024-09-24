@@ -1,0 +1,7 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+tags = ["simple", "minimal", "clean", "fast", "blog", "responsive", "dark mode", "privacy"]
+features = ["fast", "blog", "syntax highlighting", "dark mode"]
+min_version = "0.41"
+theme = 'etch'
