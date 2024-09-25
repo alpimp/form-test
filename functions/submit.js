@@ -1,7 +1,7 @@
 export function onRequest(context) {
 //  return new Response("Hello, world!")
     try {
-      const body = await conterxct.formData();
+      const body = context.formData();
 
       const { 
         get_ip,
