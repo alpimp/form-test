@@ -8,10 +8,10 @@ export async function onRequestPost(context) {
 }
 
 async function handleRequest({ request }) {
-  const ip = request.headers.get("CF-Connecting-IP");
+  const get_ip = request.headers.get("CF-Connecting-IP");
 
   const formData = await request.formData();
-  const get_ip = formData.get("get_ip");
+//  const get_ip = formData.get("get_ip");
   const alpha_val = formData.get("alpha_val");
   const demo_val = formData.get("demo_val");
   const display = formData.get("display");
