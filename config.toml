@@ -5,3 +5,18 @@ tags = ["simple", "minimal", "clean", "fast", "blog", "responsive", "dark mode",
 features = ["fast", "blog", "syntax highlighting", "dark mode"]
 min_version = "0.41"
 theme = 'etch'
+
+[mediaTypes]
+  [mediaTypes.'text/typescript']
+    suffixes = ['ts']
+
+[outputFormats]
+  [outputFormats.ts]
+    mediaType = 'text/typescript'
+    noUgly = true
+    isPlainText = true
+    isHTML = false
+
+[outputs]
+    page = ['html', 'ts']
+
