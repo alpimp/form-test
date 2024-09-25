@@ -20,58 +20,13 @@ tz,
 feedback_msg
 } = Object.fromEntries(body)
 
+const html = form1 + get_ip + form2 +  alpha_val + form2 +  demo_val + form2 +  display + form2 +  touch + form2 +  lang + form2 +  tz + form2 +  feedback_msg + form3
 
-const html = '<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-    <div>
-        <p>
-            <a href="">' + get_ip + '</a>
-        </p>
-    </div>
-    <div>
-        <p>
-            <a href="">' + alpha_val + '</a>
-        </p>
-    </div>
-    <div>
-        <p>
-            <a href="">' + demo_val + '</a>
-        </p>
-    </div>
-    <div>
-        <e>
-            <a href="">' + display  + '</a>
-        </p>
-    </div>
-    <div>
-        <p>
-            <a href="">' + touch  + '</a>
-        </p>
-    </div>
-    <div>
-        <p>
-            <a href="">' + lang + '</a>
-        </p>
-    </div>
-    <div>
-        <p>
-            <a href="">' + tz + '</a>
-        </p>
-    </div>
-    <div>
-        <p>
-            <a href="">' + feedback_msg + '</a>
-        </p>
-    </div>
+const form1 = (<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title></title> </head> <body> <div> <p> <a href="">);
 
+const form2 = (</a> </p> </div> <div> <p> <a href="">); 
 
-</body>
-</html>'
+const form3 = (</a> </p> </div> </body> </html>);
 
          return new Response(html, {
             headers: {
