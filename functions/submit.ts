@@ -22,7 +22,7 @@ feedback_msg
 
 const html = form1 + get_ip + form2 +  alpha_val + form2 +  demo_val + form2 +  display + form2 +  touch + form2 +  lang + form2 +  tz + form2 +  feedback_msg + form3
 
-const form1 = (<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title></title> </head> <body> <div> <p> <a href="">);
+const form1 = (<\!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title></title> </head> <body> <div> <p> <a href="">);
 
 const form2 = (</a> </p> </div> <div> <p> <a href="">); 
 
