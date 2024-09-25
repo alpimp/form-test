@@ -1,8 +1,7 @@
 export function onRequest(context) {
 //  return new Response("Hello, world!")
-  async fetch(request, env, ctx, headers) {
     try {
-      const body = await request.formData();
+      const body = await conterxct.formData();
 
       const { 
         get_ip,
@@ -34,7 +33,6 @@ export function onRequest(context) {
         statusText: 'not found',
       });
     }
-  },
 };
 
 
