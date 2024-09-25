@@ -1,7 +1,6 @@
-//export function onRequest(context) {
+export function onRequest(context) {
 //  return new Response("Hello, world!")
 //}
-export default {
   async fetch(request, env, ctx, headers) {
     try {
       const body = await request.formData();
