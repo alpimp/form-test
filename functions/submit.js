@@ -19,7 +19,7 @@ async function handleRequest({ request, env }) {
   const lang = formData.get("lang");
   const tz = formData.get("tz");
   const feedback_msg = formData.get("feedback_msg");
-    const secret = ${env.SECRET1};
+    const secret = $(env.SECRET1);
 
       const form1 = '<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title></title> </head> <body> <div> <p> <a href="">';
       const form2 = '</a> </p> </div> <div> <p> <a href="">'; 
