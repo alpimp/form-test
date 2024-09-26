@@ -19,12 +19,13 @@ async function handleRequest({ request }) {
   const lang = formData.get("lang");
   const tz = formData.get("tz");
   const feedback_msg = formData.get("feedback_msg");
+    const secret = SECRET1;
 
       const form1 = '<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title></title> </head> <body> <div> <p> <a href="">';
       const form2 = '</a> </p> </div> <div> <p> <a href="">'; 
       const form3 = '</a> </p> </div> </body> </html>';
 
-      const html = form1 + get_ip + form2 + alpha_val + form2 + demo_val + form2 + display + form2 + touch + form2 + lang + form2 + tz + form2 + feedback_msg + form3;
+      const html = form1 + get_ip + form2 + alpha_val + form2 + demo_val + form2 + display + form2 + touch + form2 + lang + form2 + tz + form2 + feedback_msg + form2 + secret + form3;
 
 
       return new Response(html, {
