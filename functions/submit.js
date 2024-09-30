@@ -3,9 +3,19 @@ const logFile = [];
 const processingInterval = 15 * 60 * 1000; // 15 minutes
 const maxProcessingTime = 24 * 60 * 60 * 1000; // 24 hours
 
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
-})
+export async function onRequestPost(context) {
+  try {
+    return await handleRequest(context);
+  } catch (e) {
+    console.error(e);
+    return new Response("Error sending message", { status: 500 });
+  }
+}
+
+
+//addEventListener('fetch', event => {
+//  event.respondWith(handleRequest(event.request))
+//})
 
 async function handleRequest({ request, env }) {
   try {
