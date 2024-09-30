@@ -31,13 +31,13 @@ async function handleRequest({ request, env }) {
   const responseCode = apiResponse.status;
 
   if (apiResponse.ok) {
-    return new Response(getThankYouPage(responseCode, formData), {
+    return new Response(getThankYouPage(responseCode, body), {
       headers: { 'Content-Type': 'text/html' },
     });
   } else {
     queue.push({ formData, timestamp: Date.now() });
     await processQueue(); // Call processQueue here
-    return new Response(getThankYouPage(responseCode, formData), {
+    return new Response(getThankYouPage(responseCode, body), {
       headers: { 'Content-Type': 'text/html' },
     });
   }
@@ -96,9 +96,11 @@ function createBody(get_ip, formData, secret) {
   };
 }
 
-function getThankYouPage(responseCode, formData) {
-  // Construct your thank you page here
-const body = createBody(ip_address, formData, secret);
+function getThankYouPage(responseCode, body) {
+  const formattedBody = Object.entries(body)
+    .map(([key, value]) => `<p><strong>${key}:</strong> ${value}</p>`)
+    .join('');
+
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -107,7 +109,8 @@ const body = createBody(ip_address, formData, secret);
         <h1>Thank You!</h1>
         <p>Your response has been recorded.</p>
         <p>Status Code: ${responseCode}</p>
-                   <p>${body}</p>
+        <h2>Submitted Data:</h2>
+        ${formattedBody}
       </body>
     </html>`;
 }
