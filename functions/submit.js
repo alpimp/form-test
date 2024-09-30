@@ -98,7 +98,7 @@ function createBody(get_ip, formData, secret) {
 
 function getThankYouPage(responseCode, formData) {
   // Construct your thank you page here
-// const body = createBody(get_ip, formData, secret);
+const body = createBody(ip_address, formData, secret);
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -107,7 +107,7 @@ function getThankYouPage(responseCode, formData) {
         <h1>Thank You!</h1>
         <p>Your response has been recorded.</p>
         <p>Status Code: ${responseCode}</p>
-                   <p>${formData}</p>
+                   <p>${body}</p>
       </body>
     </html>`;
 }
